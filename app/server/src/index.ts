@@ -1,15 +1,10 @@
-import Fastify from 'fastify';
+import { createServer } from './server.js';
+import type { ServerOptions } from './server.js';
+const config = {
+	port: 8000,
+	host: process.env.NODE_ENV === 'development' ? '0.0.0.0' : 'localhost',
+} as ServerOptions;
 
-const server = Fastify({ logger: true });
+const server = createServer(config);
 
-server.get('/', (_request, _reply) => {
-	return 'Hello World';
-});
-
-try {
-	await server.listen({ port: 8000 });
-	server.log.info('SUCCESSFUL START');
-} catch (error) {
-	server.log.error(error);
-	process.exit(2);
-}
+server.startServer();
