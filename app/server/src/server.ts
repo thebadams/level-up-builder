@@ -1,4 +1,6 @@
 import Fastify from 'fastify';
+import { appRouter } from './router.js';
+import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 
 export interface ServerOptions {
 	port: number;
@@ -12,6 +14,11 @@ export function createServer(opts: ServerOptions) {
 		return {
 			msg: 'Hello World',
 		};
+	});
+
+	server.register(fastifyTRPCPlugin, {
+		prefix: '/trpc',
+		trpcOptions: { router: appRouter },
 	});
 	const startServer = async () => {
 		try {
