@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          repository: thebadams/level-up-builder
+
       - uses: pnpm/action-setup
         with:
           version: 8
