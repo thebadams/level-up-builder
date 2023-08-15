@@ -10,7 +10,7 @@
 		"typecheck": "tsc",
 		"lint": "eslint ./src/**/*.{ts,tsx}",
 		"health": "pnpm lint & pnpm typecheck",
-		"build": "pnpx swc ./src -d dist"
+		"build": "swc ./src -d dist"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.62",

@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"health": "pnpm --filter server health",
 		"build": "pnpm --filter server build",
-		"start": "pnpm --filter server start"
+		"start": "pnpm --filter server start",
+		"postinstall": "pnpm --filter server install"
 	},
 	"keywords": [],
 	"author": "",
