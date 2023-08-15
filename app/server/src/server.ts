@@ -12,7 +12,7 @@ export function createServer(opts: ServerOptions) {
 
 	server.get('/', (_req, _res) => {
 		return {
-			msg: 'Hello World',
+			msg: 'Hello World From Github Actions',
 		};
 	});
 
